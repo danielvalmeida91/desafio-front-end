@@ -20,6 +20,7 @@ const config = {
     extend: {
       colors: {
         palette: {
+          background: '#FAFBFC',
           primary: {
             main: '#2500FF',
           },

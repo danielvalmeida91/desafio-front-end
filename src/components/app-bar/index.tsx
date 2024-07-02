@@ -1,10 +1,14 @@
 import { Search } from 'lucide-react'
-import { GetLanguage } from '@/app/actions'
+import { GetLanguage, GetNotifications, GetProfiles } from '@/app/actions'
 import { SelectLanguage } from './components/language'
 import { PageTitle } from './components/page-title'
+import { Notifications } from './components/notification'
+import { Profile } from './components/profile'
 
 export const AppBar = async () => {
   const { languages } = await GetLanguage()
+  const { notifications } = await GetNotifications()
+  const { profiles } = await GetProfiles()
 
   return (
     <div className="grid h-32 grid-cols-12 items-center bg-white px-5 text-palette-text-primary">
@@ -19,7 +23,11 @@ export const AppBar = async () => {
         />
       </div>
       <div className="col-span-4">
-        <SelectLanguage languages={languages} />
+        <div className="flex items-center justify-end gap-5">
+          <SelectLanguage languages={languages} />
+          <Notifications notifications={notifications} />
+          <Profile profiles={profiles} />
+        </div>
       </div>
     </div>
   )

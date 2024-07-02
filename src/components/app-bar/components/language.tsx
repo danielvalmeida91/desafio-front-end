@@ -33,14 +33,16 @@ export const SelectLanguage = ({ languages }: ISelectLanguage) => {
   }, [])
 
   return (
-    <Button className="flex items-center justify-between gap-3 text-nowrap bg-transparent text-palette-text-primary shadow-none hover:bg-transparent focus:border-none focus-visible:ring-0">
+    <Button
+      className="flex items-center justify-between gap-3 text-nowrap bg-transparent text-palette-text-primary shadow-none hover:bg-transparent focus:border-none focus-visible:ring-0"
+      onClick={() => console.log('open dropdown menu')}
+    >
       <div
         className="flex size-6 items-center rounded-full bg-cover bg-center"
         style={{
           backgroundImage: `url('${selectedLanguage.flag}')`,
         }}
       />
-
       {selectedLanguage.description}
       <ChevronDown className="size-4 text-[#A098AE]" />
     </Button>

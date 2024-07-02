@@ -4,12 +4,13 @@ import { useRouter } from 'next/navigation'
 
 interface ItemMenuProps {
   title: string
-  icon: React.ReactNode
+  icon: React.ReactElement
   isActive: boolean
 }
 
 export const ItemMenu = ({ title, icon, isActive }: ItemMenuProps) => {
   const router = useRouter()
+
   return (
     <Button
       onClick={() => router.push(`/${title.toLowerCase()}`)}

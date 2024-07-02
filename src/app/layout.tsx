@@ -20,12 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.className} bg-foreground`}>
-        <div className="flex h-full w-screen">
-          <div className="h-screen w-80">
+      <body className={`${inter.className} bg-palette-background`}>
+        <div className="flex h-screen w-screen overflow-hidden">
+          <div className="h-full w-80">
             <Menu />
           </div>
-          <div className="flex-1">
+          <div className="w-full">
             <AppBar />
             {children}
           </div>

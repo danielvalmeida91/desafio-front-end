@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ButtonHTMLAttributes, ReactElement } from 'react'
 
 interface IMenuLeaderboardIcon {
   color?: string
@@ -6,7 +6,7 @@ interface IMenuLeaderboardIcon {
 }
 
 export function MenuLeaderboardIcon({
-  color = '#737791',
+  color,
   size = 24,
 }: IMenuLeaderboardIcon) {
   return (
