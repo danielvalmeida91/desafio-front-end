@@ -5,10 +5,7 @@ interface IMenuDashboardIcon {
   color?: string
 }
 
-export function MenuDashboardIcon({
-  color = '#FFF',
-  size = 24,
-}: IMenuDashboardIcon) {
+export function MenuDashboardIcon({ size = 24, color }: IMenuDashboardIcon) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

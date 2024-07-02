@@ -25,21 +25,22 @@ export const Menu = () => {
           <ItemMenu
             title="Dashboard"
             icon={
-              <div className="text-black">
-                <MenuDashboardIcon size={28} />
-              </div>
+              <MenuDashboardIcon
+                color={pathname === '/dashboard' ? '#FFF' : '#737791'}
+                size={28}
+              />
             }
             isActive={pathname === '/dashboard'}
           />
           <ItemMenu
-            title="Leaderbord"
+            title="Leaderboard"
             icon={
               <MenuLeaderboardIcon
-                color={pathname === '/leaderbord' ? '#FFF' : '#737791'}
+                color={pathname === '/leaderboard' ? '#FFF' : '#737791'}
                 size={28}
               />
             }
-            isActive={pathname === '/leaderbord'}
+            isActive={pathname === '/leaderboard'}
           />
         </nav>
       </div>

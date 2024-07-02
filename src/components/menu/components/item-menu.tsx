@@ -14,7 +14,7 @@ export const ItemMenu = ({ title, icon, isActive }: ItemMenuProps) => {
   return (
     <Button
       onClick={() => router.push(`/${title.toLowerCase()}`)}
-      className={`text-md flex w-64 items-center justify-start gap-6 rounded-xl p-8 text-white ${isActive ? 'bg-palette-primary-main hover:bg-[#4a2bff]' : 'border-none bg-transparent text-palette-text-disabled ring-0 hover:bg-palette-primary-main hover:text-white'}`}
+      className={`text-md flex w-64 items-center justify-start gap-6 rounded-xl p-8 font-semibold text-white ${isActive ? 'bg-palette-primary-main hover:bg-[#4a2bff]' : 'border-none bg-transparent text-palette-text-disabled ring-0 hover:bg-palette-text-disabled/10'}`}
     >
       {icon}
       {title}
