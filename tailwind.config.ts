@@ -27,6 +27,7 @@ const config = {
             primary: '#151D48',
             disabled: '#737791',
           },
+          background: '#FAFBFC',
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

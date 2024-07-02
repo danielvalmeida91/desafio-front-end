@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.className} bg-foreground`}>
+      <body className={`${inter.className} bg-palette-background`}>
         <div className="flex h-full w-screen">
           <div className="h-screen w-80">
             <Menu />
