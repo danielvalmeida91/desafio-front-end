@@ -36,9 +36,7 @@ export const Platforms = async () => {
       text: 'Plataformas',
       align: 'left',
       style: {
-        fontSize: '18px',
-        fontFamily: 'Inter',
-        fontWeight: 'bold',
+        fontSize: '16px',
         color: '#151D48',
       },
     },
@@ -90,7 +88,7 @@ export const Platforms = async () => {
   }
 
   return (
-    <div className="bg-white col-span-5 rounded-lg p-8">
+    <div className="col-span-5 rounded-lg bg-white p-8">
       <ApexChartMain
         options={options}
         series={series}

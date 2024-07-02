@@ -55,8 +55,6 @@ export const Lifes = async () => {
       align: 'left',
       style: {
         fontSize: '16px',
-        fontFamily: 'Inter',
-        fontWeight: 'bold',
         color: '#151D48',
       },
     },
@@ -106,7 +104,7 @@ export const Lifes = async () => {
   }
 
   return (
-    <div className="bg-white col-span-3 rounded-lg p-8">
+    <div className="col-span-3 rounded-lg bg-white p-8">
       <ApexChartMain
         options={options}
         series={series}
@@ -117,9 +115,9 @@ export const Lifes = async () => {
         <div className="flex flex-col items-center">
           <div className="flex items-center justify-center">
             <div className={`size-3 rounded-full bg-[#0095FF]`}></div>
-            <span className="text-gray-500 ml-2 text-xs">{legend[0].name}</span>
+            <span className="ml-2 text-xs text-gray-500">{legend[0].name}</span>
           </div>
-          <div className="text-palette-text-primary text-xs font-semibold">
+          <div className="text-xs font-semibold text-palette-text-primary">
             {legend[0].total}
           </div>
         </div>
@@ -127,9 +125,9 @@ export const Lifes = async () => {
         <div className="flex flex-col items-center">
           <div className="flex items-center justify-center">
             <div className={`size-3 rounded-full bg-[#07E098]`}></div>
-            <span className="text-gray-500 ml-2 text-xs">{legend[1].name}</span>
+            <span className="ml-2 text-xs text-gray-500">{legend[1].name}</span>
           </div>
-          <div className="text-palette-text-primary text-xs font-semibold">
+          <div className="text-xs font-semibold text-palette-text-primary">
             {legend[1].total}
           </div>
         </div>

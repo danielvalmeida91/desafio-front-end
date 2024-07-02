@@ -20,6 +20,8 @@ export const Reality = async () => {
     }
   })
 
+  const categories = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul']
+
   const options: ApexOptions = {
     chart: {
       type: 'bar',
@@ -52,15 +54,14 @@ export const Reality = async () => {
       align: 'left',
       style: {
         fontSize: '16px',
-        fontFamily: 'Inter',
-        fontWeight: 'bold',
         color: '#151D48',
       },
     },
     colors,
     xaxis: {
+      categories,
       labels: {
-        show: false,
+        show: true,
         style: {
           colors: '#7B91B0',
         },
@@ -103,7 +104,7 @@ export const Reality = async () => {
   }
 
   return (
-    <div className="bg-white col-span-3 grid grid-rows-3 rounded-lg p-8">
+    <div className="col-span-3 grid grid-rows-3 rounded-lg bg-white p-8">
       <div className="row-span-2">
         <ApexChartMain
           options={options}
@@ -119,10 +120,10 @@ export const Reality = async () => {
               <BsHandbag />
             </div>
             <div className="mr-2 flex flex-col justify-center">
-              <p className="text-palette-text-primary text-sm font-semibold">
+              <p className="text-sm font-semibold text-palette-text-primary">
                 {legend[0].name}
               </p>
-              <span className="text-gray-500 text-[10px]">
+              <span className="text-[10px] text-gray-500">
                 {legend[0].role}
               </span>
             </div>
@@ -138,10 +139,10 @@ export const Reality = async () => {
               <TicketCheck size={20} />
             </div>
             <div className="mr-2 flex flex-col justify-center">
-              <p className="text-palette-text-primary text-sm font-semibold">
+              <p className="text-sm font-semibold text-palette-text-primary">
                 {legend[1].name}
               </p>
-              <span className="text-gray-500 text-[10px]">
+              <span className="text-[10px] text-gray-500">
                 {legend[1].role}
               </span>
             </div>

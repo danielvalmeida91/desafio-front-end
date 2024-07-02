@@ -46,8 +46,6 @@ export const TotalIncome = async () => {
       align: 'left',
       style: {
         fontSize: '16px',
-        fontFamily: 'Inter',
-        fontWeight: 'bold',
         color: '#151D48',
       },
     },
@@ -92,7 +90,7 @@ export const TotalIncome = async () => {
   }
 
   return (
-    <div className="bg-white col-span-6 rounded-lg p-8">
+    <div className="col-span-6 rounded-lg bg-white p-8">
       <ApexChartMain
         options={options}
         series={series}
