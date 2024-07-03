@@ -6,6 +6,8 @@ import { ApexOptions } from 'apexcharts'
 type TTotalIncome = {
   id: string
   color: string
+  name: string
+  data: string[]
   options: {
     name: string
     data: string[]
@@ -16,7 +18,7 @@ interface ITotalIncome {
   data: TTotalIncome[]
 }
 
-export const TotalIncome = async ({ data }: ITotalIncome) => {
+export const TotalIncome = ({ data }: ITotalIncome) => {
   const series = createSeries({ data })
   const colors = createColors({ data })
 

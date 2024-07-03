@@ -6,6 +6,8 @@ import { ApexOptions } from 'apexcharts'
 type TLifes = {
   id: string
   color: string
+  name: string
+  data: string[]
   total: string
   options: {
     name: string

@@ -1,10 +1,13 @@
 import { ApexChartMain } from '@/app/components/apex-chart'
 import { createColors, createSeries } from '@/utils/helpers'
 import { ApexOptions } from 'apexcharts'
+import { platform } from 'os'
 
 type TPlatform = {
   id: string
   color: string
+  name: string
+  data: string[]
   options: {
     name: string
     data: string[]
@@ -14,7 +17,7 @@ type TPlatform = {
 interface IPlatforms {
   data: TPlatform[]
 }
-export const Platforms = async ({ data }: IPlatforms) => {
+export const Platforms = ({ data }: IPlatforms) => {
   const series = createSeries({ data })
   const colors = createColors({ data })
 

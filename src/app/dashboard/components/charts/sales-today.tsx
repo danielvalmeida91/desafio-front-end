@@ -1,4 +1,3 @@
-import { GetSales } from '@/app/actions'
 import { Button } from '@/components/ui/button'
 import { Upload } from 'lucide-react'
 import Image from 'next/image'
@@ -16,7 +15,7 @@ interface ISalesToday {
   data: TSale[]
 }
 
-export const SalesToday = ({ data }: ISalesToday) => {
+export const SalesToday = async ({ data }: ISalesToday) => {
   return (
     <div className="col-span-7 rounded-lg bg-white p-6">
       <div className="flex items-center justify-between">

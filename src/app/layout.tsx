@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${inter.className} bg-palette-background`}>
-        <div className="flex h-screen w-screen overflow-hidden">
+        <div className="flex h-screen w-screen">
           <div className="h-full w-80">
             <Menu />
           </div>

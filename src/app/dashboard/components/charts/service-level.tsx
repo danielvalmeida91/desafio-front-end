@@ -6,6 +6,8 @@ import { ApexOptions } from 'apexcharts'
 type TServiceLevel = {
   id: string
   color: string
+  name: string
+  data: string[]
   options: {
     name: string
     data: string[]

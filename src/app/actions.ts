@@ -14,8 +14,20 @@ export const GetLanguage = async () => {
   return data
 }
 
+export const GetNotifications = async () => {
+  const { data } = await api.get('/api/notifications')
+
+  return data
+}
+
 export const GetSales = async () => {
   const { data } = await api.get('/api/charts/sales')
+
+  return data
+}
+
+export const GetProfiles = async () => {
+  const { data } = await api.get('/api/profiles')
 
   return data
 }
@@ -58,18 +70,6 @@ export const GetCountrySales = async () => {
 
 export const GetServiceLevel = async () => {
   const { data } = await api.get('/api/charts/service-level')
-
-  return data
-}
-
-export const GetNotifications = async () => {
-  const { data } = await api.get('/api/notifications')
-
-  return data
-}
-
-export const GetProfiles = async () => {
-  const { data } = await api.get('/api/profiles')
 
   return data
 }

@@ -2,10 +2,10 @@
 import { ApexOptions } from 'apexcharts'
 import dynamic from 'next/dynamic'
 
-const ApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
+const ApexChart = dynamic(async () => import('react-apexcharts'), { ssr: true })
 
 interface IApexChartMain {
-  series: ApexAxisChartSeries | ApexNonAxisChartSeries
+  series: { name: string; data: string[] }[]
   options: ApexOptions
   type: 'line' | 'area' | 'bar' | 'pie' | 'donut' | 'radar' | undefined
 }

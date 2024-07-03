@@ -11,6 +11,8 @@ type TReality = {
   role: string
   color: string
   total: string
+  name: string
+  data: string[]
   options: {
     name: string
     data: string[]

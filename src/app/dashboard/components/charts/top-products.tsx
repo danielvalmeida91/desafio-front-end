@@ -14,6 +14,7 @@ type TTopProducts = {
   code: string
   name: string
   color: string
+  data: string[]
   background: string
   backgroundLine: string
   result: string
