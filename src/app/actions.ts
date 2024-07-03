@@ -37,3 +37,9 @@ export const GetReality = async () => {
 
   return data
 }
+
+export const GetTopProducts = async () => {
+  const { data } = await api.get('/api/charts/top-products')
+
+  return data
+}
