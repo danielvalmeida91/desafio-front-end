@@ -17,7 +17,7 @@ export const Country = ({ data, colors }: ICountry) => {
   }
 
   return (
-    <div className="col-span-3 rounded-lg bg-white p-8">
+    <div className="col-span-3 row-span-4 rounded-lg bg-white p-4">
       <h6 className="font-bold text-palette-text-primary">
         Mapeamento de vendas por UF
       </h6>

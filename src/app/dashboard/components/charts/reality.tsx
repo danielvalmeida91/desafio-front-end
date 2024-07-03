@@ -118,7 +118,7 @@ export const Reality = ({ data }: IReality) => {
   }
 
   return (
-    <div className="col-span-3 grid grid-rows-3 rounded-lg bg-white p-8">
+    <div className="col-span-3 row-span-4 rounded-lg bg-white p-4">
       <div className="row-span-2">
         <ApexChartMain
           options={options}

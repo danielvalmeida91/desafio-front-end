@@ -93,7 +93,7 @@ export const ServiceLevel = ({ data }: IServiceLevel) => {
   }
 
   return (
-    <div className="col-span-3 rounded-lg bg-white p-8">
+    <div className="col-span-3 row-span-4 rounded-lg bg-white p-4">
       <ApexChartMain
         options={options}
         series={series}

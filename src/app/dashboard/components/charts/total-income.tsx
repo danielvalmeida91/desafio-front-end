@@ -102,7 +102,7 @@ export const TotalIncome = ({ data }: ITotalIncome) => {
   }
 
   return (
-    <div className="col-span-6 rounded-lg bg-white p-8">
+    <div className="col-span-6 row-span-4 rounded-lg bg-white p-4">
       <ApexChartMain
         options={options}
         series={series}

@@ -29,7 +29,7 @@ export default async function Dashboard() {
   const { serviceLevel } = await GetServiceLevel()
 
   return (
-    <div className="grid max-h-screen grid-cols-12 grid-rows-3 gap-4 p-4">
+    <div className="grid max-h-screen grid-cols-12 grid-rows-12 gap-4 p-4">
       <SalesToday data={sales} />
       <Platforms data={platforms} />
       <TotalIncome data={totalIncome} />

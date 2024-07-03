@@ -83,7 +83,7 @@ export const Platforms = ({ data }: IPlatforms) => {
       position: 'bottom',
       horizontalAlign: 'center',
       itemMargin: {
-        horizontal: 30,
+        horizontal: 10,
       },
     },
     grid: {
@@ -99,7 +99,7 @@ export const Platforms = ({ data }: IPlatforms) => {
   }
 
   return (
-    <div className="col-span-5 rounded-lg bg-white p-8">
+    <div className="col-span-5 row-span-3 rounded-lg bg-white p-4">
       <ApexChartMain
         options={options}
         series={series}

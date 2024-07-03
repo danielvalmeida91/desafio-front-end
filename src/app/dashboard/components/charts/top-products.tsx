@@ -26,7 +26,7 @@ interface ITopProducts {
 
 export const TopProducts = ({ data }: ITopProducts) => {
   return (
-    <div className="col-span-6 flex flex-col rounded-lg bg-white p-8">
+    <div className="col-span-6 row-span-4 flex flex-col rounded-lg bg-white p-4">
       <h6 className="font-bold text-palette-text-primary">Top produtos</h6>
 
       <Table className="mt-3">
