@@ -24,14 +24,8 @@ export const Lifes = async () => {
         show: false,
       },
     },
-    plotOptions: {
-      bar: {
-        borderRadius: 4,
-        columnWidth: '30%',
-      },
-    },
     markers: {
-      size: 5,
+      size: 4.5,
       hover: {
         size: 9,
       },
@@ -41,14 +35,13 @@ export const Lifes = async () => {
     },
     stroke: {
       curve: 'smooth',
+      width: 1,
     },
     fill: {
-      opacity: 0.8,
-
-      pattern: {
-        width: 2,
-        height: 3,
-      },
+      // pattern: {
+      //   width: 1,
+      //   height: 2,
+      // },
     },
     title: {
       text: 'Vidas',
@@ -75,6 +68,7 @@ export const Lifes = async () => {
     },
     yaxis: {
       show: false,
+      min: 250,
       labels: {
         style: { colors: '#7B91B0', fontSize: '10px' },
       },

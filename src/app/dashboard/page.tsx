@@ -1,3 +1,4 @@
+import { Country } from './components/charts/country'
 import { Lifes } from './components/charts/lifes'
 import { Platforms } from './components/charts/platforms'
 import { Reality } from './components/charts/reality'
@@ -14,6 +15,7 @@ export default function Dashboard() {
       <Lifes />
       <Reality />
       <TopProducts />
+      <Country />
     </div>
   )
 }

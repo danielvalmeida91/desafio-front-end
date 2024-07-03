@@ -43,3 +43,9 @@ export const GetTopProducts = async () => {
 
   return data
 }
+
+export const GetCountrySales = async () => {
+  const { data } = await api.get('/api/charts/country')
+
+  return data
+}

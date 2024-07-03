@@ -71,11 +71,12 @@ export const TopProducts = async () => {
                 </TableCell>
                 <TableCell>
                   <div
-                    className="mx-auto flex w-16 self-center rounded-xl px-4 py-1 text-center"
+                    className="mx-auto flex w-16 self-center rounded-xl px-4 py-1 text-center font-semibold"
                     style={{
                       border: `2px solid ${product.color}`,
                       backgroundColor: product.background,
-                      color: product.color,
+                      textAlign: 'center',
+                      color: `${product.color}`,
                     }}
                   >
                     {product.result}
