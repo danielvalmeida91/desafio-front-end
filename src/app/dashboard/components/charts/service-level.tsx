@@ -1,8 +1,9 @@
+import { GetTotalIncome } from '@/app/actions'
 import { ApexChartMain } from '@/app/components/apex-chart'
 import { createColors, createSeries } from '@/utils/helpers'
 import { ApexOptions } from 'apexcharts'
 
-type TPlatform = {
+type TServiceLevel = {
   id: string
   color: string
   options: {
@@ -11,54 +12,50 @@ type TPlatform = {
   }
 }
 
-interface IPlatforms {
-  data: TPlatform[]
+interface IServiceLevel {
+  data: TServiceLevel[]
 }
-export const Platforms = async ({ data }: IPlatforms) => {
+
+export const ServiceLevel = ({ data }: IServiceLevel) => {
   const series = createSeries({ data })
   const colors = createColors({ data })
 
-  const categories = [
-    'Jan',
-    'Fev',
-    'Mar',
-    'Abr',
-    'Mai',
-    'Jun',
-    'Jul',
-    'Ago',
-    'Set',
-    'Out',
-    'Nov',
-    'Dez',
-  ]
-
   const options: ApexOptions = {
     chart: {
-      type: 'line',
+      type: 'bar',
+      stacked: true,
       toolbar: {
         show: false,
       },
     },
+    plotOptions: {
+      bar: {
+        borderRadius: 2,
+        columnWidth: '30%',
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 1,
+      colors: ['transparent'],
+    },
     title: {
-      text: 'Plataformas',
+      text: 'Nível de serviço',
       align: 'left',
       style: {
         fontSize: '16px',
         color: '#151D48',
       },
     },
-    stroke: {
-      curve: 'smooth',
-      lineCap: 'round',
-      width: [3.2, 3.2, 3.2],
-    },
     colors,
     xaxis: {
-      categories,
       labels: {
+        show: false,
         style: {
-          colors: '#151D48',
+          colors: '#7B91B0',
         },
       },
       axisTicks: {
@@ -69,18 +66,16 @@ export const Platforms = async ({ data }: IPlatforms) => {
       },
     },
     yaxis: {
-      show: true,
-      stepSize: 100,
-      min: 0,
+      show: false,
       labels: {
-        style: { colors: '#9699ac' },
+        style: { colors: '#7B91B0', fontSize: '10px' },
       },
     },
     legend: {
       position: 'bottom',
       horizontalAlign: 'center',
-      itemMargin: {
-        horizontal: 30,
+      markers: {
+        radius: 99,
       },
     },
     grid: {
@@ -96,13 +91,12 @@ export const Platforms = async ({ data }: IPlatforms) => {
   }
 
   return (
-    <div className="col-span-5 rounded-lg bg-white p-8">
+    <div className="col-span-3 rounded-lg bg-white p-8">
       <ApexChartMain
         options={options}
         series={series}
-        title={'Plataformas'}
-        type={'line'}
-        categories={categories}
+        title={'Nível de serviço'}
+        type={'bar'}
       />
     </div>
   )

@@ -1,14 +1,24 @@
 'use server'
-import { GetTotalIncome } from '@/app/actions'
 import { ApexChartMain } from '@/app/components/apex-chart'
 import { createColors, createSeries } from '@/utils/helpers'
 import { ApexOptions } from 'apexcharts'
 
-export const TotalIncome = async () => {
-  const { totalIncome } = await GetTotalIncome()
+type TTotalIncome = {
+  id: string
+  color: string
+  options: {
+    name: string
+    data: string[]
+  }
+}
 
-  const series = createSeries({ data: totalIncome })
-  const colors = createColors({ data: totalIncome })
+interface ITotalIncome {
+  data: TTotalIncome[]
+}
+
+export const TotalIncome = async ({ data }: ITotalIncome) => {
+  const series = createSeries({ data })
+  const colors = createColors({ data })
 
   const categories = [
     'Segunda',

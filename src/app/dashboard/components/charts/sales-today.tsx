@@ -13,20 +13,18 @@ type TSale = {
 }
 
 interface ISalesToday {
-  sales: TSale[]
+  data: TSale[]
 }
 
-export const SalesToday = async () => {
-  const { sales }: ISalesToday = await GetSales()
-
+export const SalesToday = ({ data }: ISalesToday) => {
   return (
-    <div className="bg-white col-span-7 rounded-lg p-6">
+    <div className="col-span-7 rounded-lg bg-white p-6">
       <div className="flex items-center justify-between">
         <div className="flex flex-col items-start">
-          <h6 className="text-palette-text-primary text-base font-semibold">
+          <h6 className="text-base font-semibold text-palette-text-primary">
             Vendas hoje
           </h6>
-          <span className="text-palette-text-disabled text-xs">
+          <span className="text-xs text-palette-text-disabled">
             Resumo de vendas
           </span>
         </div>
@@ -37,8 +35,8 @@ export const SalesToday = async () => {
       </div>
 
       <div className="mt-5 grid grid-cols-12 gap-4">
-        {sales &&
-          sales.map((sale) => {
+        {data &&
+          data.map((sale) => {
             return (
               <div className="col-span-3" key={sale.id}>
                 <div
@@ -51,7 +49,7 @@ export const SalesToday = async () => {
                     height={40}
                     alt="Icon"
                   />
-                  <h6 className="text-palette-text-primary text-base font-semibold">
+                  <h6 className="text-base font-semibold text-palette-text-primary">
                     {sale.value}
                   </h6>
                   <p className="text-sm text-[#425166]">{sale.description}</p>

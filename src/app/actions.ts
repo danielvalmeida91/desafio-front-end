@@ -49,3 +49,9 @@ export const GetCountrySales = async () => {
 
   return data
 }
+
+export const GetServiceLevel = async () => {
+  const { data } = await api.get('/api/charts/service-level')
+
+  return data
+}

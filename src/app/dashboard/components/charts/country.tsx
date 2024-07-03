@@ -1,17 +1,19 @@
-'use server'
-import { GetCountrySales } from '@/app/actions'
+'use client'
 import Chart from 'react-google-charts'
 
-export const Country = async () => {
-  const { country: data } = await GetCountrySales()
+interface ICountry {
+  data: [string, string][]
+  colors: string[]
+}
 
+export const Country = ({ data, colors }: ICountry) => {
   const options = {
     region: 'BR',
     displayMode: 'regions',
     resolution: 'provinces',
-    colorAxis: { colors: ['#CCCCCC', '#2500FF'] },
+    colorAxis: { colors },
     legend: 'none',
-    magnifyingGlass: { enable: true, zoomFactor: 20 },
+    magnifyingGlass: { enable: true, zoomFactor: 15 },
   }
 
   return (
@@ -22,6 +24,7 @@ export const Country = async () => {
       <Chart
         chartType="GeoChart"
         width="100%"
+        height={'100%'}
         data={data}
         options={options}
         className="flex justify-center"

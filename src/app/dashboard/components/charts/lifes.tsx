@@ -1,15 +1,25 @@
-'use server'
 import { GetLifes } from '@/app/actions'
 import { ApexChartMain } from '@/app/components/apex-chart'
 import { createColors, createSeries } from '@/utils/helpers'
 import { ApexOptions } from 'apexcharts'
 
-export const Lifes = async () => {
-  const { lifes } = await GetLifes()
+type TLifes = {
+  id: string
+  color: string
+  total: string
+  options: {
+    name: string
+    data: string[]
+  }
+}
 
-  const series = createSeries({ data: lifes })
-  const colors = createColors({ data: lifes })
-  const legend = lifes.map((item: any) => {
+interface ILifes {
+  data: TLifes[]
+}
+export const Lifes = ({ data }: ILifes) => {
+  const series = createSeries({ data })
+  const colors = createColors({ data })
+  const legend = data.map((item: TLifes) => {
     return {
       name: item.options.name,
       total: item.total,

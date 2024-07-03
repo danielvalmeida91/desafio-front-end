@@ -2,16 +2,28 @@
 import { GetReality } from '@/app/actions'
 import { ApexChartMain } from '@/app/components/apex-chart'
 import { createColors, createSeries } from '@/utils/helpers'
-import { ApexOptions } from 'apexcharts'
+import { ApexOptions, name } from 'apexcharts'
 import { TicketCheck } from 'lucide-react'
 import { BsHandbag } from 'react-icons/bs'
 
-export const Reality = async () => {
-  const { reality } = await GetReality()
+type TReality = {
+  id: string
+  role: string
+  color: string
+  total: string
+  options: {
+    name: string
+    data: string[]
+  }
+}
 
-  const series = createSeries({ data: reality })
-  const colors = createColors({ data: reality })
-  const legend = reality.map((item: any) => {
+interface IReality {
+  data: TReality[]
+}
+export const Reality = ({ data }: IReality) => {
+  const series = createSeries({ data })
+  const colors = createColors({ data })
+  const legend = data.map((item: TReality) => {
     return {
       name: item.options.name,
       role: item.role,

@@ -10,20 +10,20 @@ import {
 } from '@/components/ui/table'
 
 type TTopProducts = {
-  topProducts: {
-    id: string
-    code: string
-    name: string
-    color: string
-    background: string
-    backgroundLine: string
-    result: string
-  }[]
+  id: string
+  code: string
+  name: string
+  color: string
+  background: string
+  backgroundLine: string
+  result: string
 }
 
-export const TopProducts = async () => {
-  const { topProducts }: TTopProducts = await GetTopProducts()
+interface ITopProducts {
+  data: TTopProducts[]
+}
 
+export const TopProducts = ({ data }: ITopProducts) => {
   return (
     <div className="col-span-6 flex flex-col rounded-lg bg-white p-8">
       <h6 className="font-bold text-palette-text-primary">Top produtos</h6>
@@ -46,7 +46,7 @@ export const TopProducts = async () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {topProducts.map((product) => {
+          {data.map((product: TTopProducts) => {
             return (
               <TableRow
                 key={product.id}
